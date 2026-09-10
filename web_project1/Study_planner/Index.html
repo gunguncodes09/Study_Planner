@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="bg-gradient-to-tr from-blue-100 via-pink-100 to-yellow-100 min-h-screen font-sans">
+     
+   <!-- Navbar -->
+  <header class="w-full flex justify-center pt-6">
+    <nav class="flex justify-between items-center px-8 py-3 bg-white rounded-2xl shadow-md max-w-6xl w-full">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="brain.png" alt="Logo" class="w-8 h-8">
+        <span class="font-bold text-lg text-indigo-600">StudyPlanner</span>
+      </div>
+
+      <!-- Links -->
+      <ul class="flex space-x-8 text-gray-700 font-medium relative">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="#" class="nav-link">Timetable</a></li>
+        <li><a href="assignment.html" class="nav-link">Assignments</a></li>
+        <li><a href="#" class="nav-link">Performance</a></li>
+        <span class="underline-indicator"></span>
+      </ul>
+
+      <!-- Buttons -->
+      <div class="flex items-center space-x-4">
+        <button id="loginBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Login</button>
+        <button id="signupBtn" class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">Sign Up</button>
+      </div>
+    </nav>
+  </header>
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <header class="grid md:grid-cols-3 items-center px-10 py-20 gap-10">
+        <!-- Left: Text -->
+        <div class="max-w-lg">
+            <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                Study Smarter.<br> Achieve More.
+            </h1>
+            <p class="mt-4 text-gray-600 text-lg">
+                Your AI powered planner for academic success.
+            </p>
+            <button
+                class="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition">
+                Get Started
+            </button>
+        </div>
+
+        <!-- Middle: Hero Illustration -->
+        <div class="flex justify-center">
+            <img src="brain.png" alt="Brain Illustration" class="w-72 animate-bounce-slow">
+        </div>
+
+        <!-- Right: Progress Circle -->
+        <div class="flex justify-center">
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <div class="w-32 h-32 relative">
+                    <svg class="progress-circle w-32 h-32 transform -rotate-90">
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle id="progress" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div id="percentage" class="absolute inset-0 flex items-center justify-center font-bold text-lg">0%
+                    </div>
+                </div>
+                <p class="mt-2 text-sm font-medium text-gray-700">Assignments Done</p>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Features -->
+    <section class="text-center py-20 px-10">
+        <h2 class="text-3xl font-bold mb-12">Features at Glance</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-2xl shadow-lg bg-blue-500 text-white hover:-translate-y-2 transition">
+                <div class="text-4xl mb-4">🕒</div>
+                <h3 class="font-semibold text-xl">Smart Scheduling</h3>
+                <p class="mt-2 text-sm">Optimize your study time with AI-powered scheduling.</p>
+            </div>
+            <div class="p-8 rounded-2xl shadow-lg bg-green-500 text-white hover:-translate-y-2 transition">
+                <div class="text-4xl mb-4">📊</div>
+                <h3 class="font-semibold text-xl">Track Your Grades</h3>
+                <p class="mt-2 text-sm">Monitor performance and get insights to improve your grades.</p>
+            </div>
+            <div class="p-8 rounded-2xl shadow-lg bg-yellow-400 text-gray-900 hover:-translate-y-2 transition">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="font-semibold text-xl">Connect & Collaborate</h3>
+                <p class="mt-2 text-sm">Join study groups and collaborate with peers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-gray-50 py-20 px-10 text-center">
+        <h2 class="text-3xl font-bold mb-12">What Our Users Say</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-10">
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                <img src="th.jpg" alt="User 1" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <p>"My grades improved!"</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                <img src="th.jpg" alt="User 2" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <p>"This planner keeps me organized."</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                <img src="th.jpg" alt="User 3" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <p>"Studying with friends has never been easier."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-white text-gray-600 text-sm border-t">© 2025 StudyPlanner | All Rights Reserved
+    </footer>
+
+    <!-- Modal Background -->
+    <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <!-- Modal Card -->
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 relative animate-fadeIn">
+            <!-- Close -->
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
+
+            <!-- Title -->
+            <h2 id="modalTitle" class="text-3xl font-bold text-center mb-6 text-indigo-600">Login</h2>
+
+            <!-- Form -->
+            <form id="authForm" class="space-y-4">
+                <div id="nameField" class="hidden">
+                    <label class="block font-medium text-gray-700">Full Name</label>
+                    <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                        placeholder="Enter your name">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                        placeholder="Enter email">
+                </div>
+
+                <div>
+                    <label class="block font-medium text-gray-700">Password</label>
+                    <input type="password" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                        placeholder="Enter password">
+                </div>
+
+                <!-- Extra Fields (only Signup) -->
+                <div id="extraFields" class="hidden space-y-4">
+                    <div>
+                        <label class="block font-medium text-gray-700">College / School</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                            placeholder="Enter institution name">
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-gray-700">Education</label>
+                        <select id="education"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                            <option value="">Select</option>
+                            <option value="school">School</option>
+                            <option value="be">B.E</option>
+                            <option value="me">M.E</option>
+                            <option value="mba">MBA</option>
+                        </select>
+                    </div>
+
+                    <!-- Dynamic fields -->
+                    <div id="dynamicFields" class="space-y-4"></div>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

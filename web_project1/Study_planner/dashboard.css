@@ -1,0 +1,94 @@
+
+/* Custom styles for dashboard, extending index.css animations */
+
+/* Navbar slide animation (reused) */
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.slide-down {
+    animation: slideDown 0.8s ease forwards;
+}
+
+/* Animated underline links (reused) */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background: #6366f1;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Slow bounce for hero illustration (reused if needed) */
+@keyframes bounceSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+.animate-bounce-slow {
+    animation: bounceSlow 4s infinite;
+}
+
+/* Circular progress (enhanced for dashboard) */
+.progress-circle circle {
+    fill: none;
+    stroke-width: 5;
+    stroke: #e5e7eb;
+}
+.progress-circle #progress {
+    stroke: #6366f1;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s ease;
+    
+}
+.progress-circle:hover #progress {
+    stroke-dashoffset: 157; /* Optional hover effect for 50%*/
+}
+
+/* Add smooth transition for text updates if desired */
+#timer-text {
+    transition: fill 0.3s ease;
+}
+
+/* Fade in animation (reused) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Additional dashboard-specific styles */
+header {
+    animation: slideDown 0.8s ease forwards;
+}
+
+section {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Checkbox hover effect */
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Button transitions */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}

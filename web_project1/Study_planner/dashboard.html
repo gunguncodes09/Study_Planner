@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudyPlanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="bg-gradient-to-tr from-blue-100 via-pink-100 to-yellow-100 min-h-screen font-sans">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg">
+        <nav class="flex justify-between items-center px-6 py-4">
+            <div class="flex items-center space-x-4">
+                <img src="brain.png" alt="StudyPlanner Logo" class="w-8 h-8">
+                <span class="font-bold text-lg text-indigo-600">StudyPlanner</span>
+            </div>
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-700 hover:text-indigo-600">Dashboard</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Timetable</a>
+                <a href="assignment.html" class="nav-link text-gray-700 hover:text-indigo-600">Assignments</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-indigo-600">Performance</a>
+               <!-- Profile Dropdown Trigger and Menu -->
+                <div class="relative">
+                    <!-- Profile Avatar Icon -->
+                    <div id="profile-trigger" class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-indigo-700 transition-colors font-medium text-sm shadow-md">
+                        G <!-- Initials placeholder; replace with <img src="user-avatar.jpg" class="w-full h-full rounded-full" alt="Profile"> for a real image -->
+                    </div> 
+
+                    <!-- Dropdown Menu (Hidden by default) -->
+                    <div id="profile-dropdown" class="absolute top-10 right-0 hidden bg-white rounded-xl shadow-xl py-2 w-48 z-50 border border-gray-200 animate-fadeIn">
+                        <!-- User Info -->
+                        <div class="px-4 py-3 border-b border-gray-100">
+                            <h3 class="font-semibold text-gray-800">Gungun</h3> <!-- Dynamic: Use JS to set from user data -->
+                            <p class="text-sm text-gray-500">gungun@example.com</p> <!-- Dynamic: Use JS to set -->
+                        </div>
+
+                        <!-- Menu Links -->
+                        <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">View Profile</a>
+                        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Settings</a>
+                        
+                        <!-- Logout Button -->
+                        <button id="logout-btn" class="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 transition-colors">Logout</button>
+                      </div>
+                  </div>
+             </div>
+         </nav>
+      </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <!-- Greeting Section -->
+        <section class="mb-8">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Good Morning, Gungun 👋</h1>
+                    <p class="text-gray-600">Monday, September 16 10:00 AM</p>
+                    <p class="text-gray-600">3 tasks pending - 2 assignments due today</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-500">Daily Streak</p>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl font-bold text-indigo-600">25:00</span>
+                        <div class="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
+                            <span class="text-white text-xs">🔥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Pending Tasks -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Pending Tasks</h2>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-indigo-600 rounded">
+                        <span class="ml-2 text-gray-700">Read Chapter 5</span>
+                    </li>
+                    <li class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-indigo-600 rounded">
+                        <span class="ml-2 text-gray-700">Complete Math homework</span>
+                    </li>
+                    <li class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-indigo-600 rounded">
+                        <span class="ml-2 text-gray-700">Review chemistry notes</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Overdue Tasks -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Overdue Tasks</h2>
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                    <span class="text-orange-600 font-medium">Finish essay draft</span>
+                </div>
+                <p class="text-sm text-gray-500">1 overdue task</p>
+            </section>
+
+            <!-- Daily Goal -->
+            <section class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Daily Goal</h2>
+                <ul class="space-y-3 mb-4">
+                    <li class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-indigo-600 rounded">
+                        <span class="ml-2 text-gray-700">Study for history test</span>
+                    </li>
+                    <li class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-indigo-600 rounded">
+                        <span class="ml-2 text-gray-700">Practice piano</span>
+                    </li>
+                </ul>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-sm text-gray-500">25:00</span>
+                    <svg class="w-12 h-12" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="5"></circle>
+                        <circle id="progress" cx="50" cy="50" r="45" fill="none" stroke="#6366f1" stroke-width="5" stroke-dasharray="283" stroke-dashoffset="198" transform="rotate(-90 50 50)"></circle>
+                    </svg>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Start</button>
+                    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition">Reset</button>
+                </div>
+            </section>
+
+            <!-- Upcoming Schedule -->
+            <section class="bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Upcoming Schedule</h2>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span class="text-gray-700">Math Assignment</span>
+                        <span class="text-sm text-gray-500 ml-auto">Today</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        <span class="text-gray-700">Science Project</span>
+                        <span class="text-sm text-gray-500 ml-auto">Tomorrow</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                        <span class="text-gray-700">English Literature</span>
+                        <span class="text-sm text-gray-500 ml-auto">Wednesday</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Quote of the Day -->
+        <section class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Quote of the Day</h2>
+            <p class="text-gray-600 italic mb-4">"The only way to do great work is to love what you do."</p>
+            <p class="text-gray-500 text-sm">- Steve Jobs</p>
+            <button id="add-task-btn" class="ml-auto bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">+</button>
+        </section>
+    </main>
+
+    <!-- Add Task Modal (New) -->
+    <div id="add-task-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 relative animate-fadeIn">
+            <button class="close absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
+            <h2 class="text-3xl font-bold text-center mb-6 text-indigo-600">Add New Task</h2>
+            <form id="add-task-form" class="space-y-4">
+                <div>
+                    <label class="block font-medium text-gray-700">Task Title:</label>
+                    <input type="text" id="task-title" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400" required placeholder="Enter task title">
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-700">Priority:</label>
+                    <select id="task-priority" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-700">Due Date:</label>
+                    <input type="date" id="task-due" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-700">Category:</label>
+                    <select id="task-category" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                        <option value="pending">Pending Tasks</option>
+                        <option value="daily-goal">Daily Goal</option>
+                        <option value="upcoming">Upcoming Schedule</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-700">Description (Optional):</label>
+                    <textarea id="task-desc" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400" placeholder="Enter description"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition">Add Task</button>
+                <button type="button" class="cancel-btn w-full bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition mt-2">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
